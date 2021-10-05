@@ -145,11 +145,8 @@ except ImportError:
     PARSER_TYPE_STR = 'string'
     PARSER_TYPE_FLOAT = 'float'
 
-    try:
-        from StringIO import StringIO
-        BytesIO = None
-    except ImportError:
-        from io import StringIO, BytesIO
+
+    from io import StringIO, BytesIO
 
 
     import builtins
