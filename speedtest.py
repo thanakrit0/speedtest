@@ -28,6 +28,10 @@ import sys
 import threading
 import timeit
 import xml.parsers.expat
+from io import StringIO, BytesIO
+import builtins
+from io import TextIOWrapper, FileIO
+
 
 try:
     import gzip
@@ -146,11 +150,6 @@ except ImportError:
     PARSER_TYPE_FLOAT = 'float'
 
 
-    from io import StringIO, BytesIO
-
-
-    import builtins
-    from io import TextIOWrapper, FileIO
 
     class _Py3Utf8Output(TextIOWrapper):
         """UTF-8 encoded wrapper around stdout for py3, to override
