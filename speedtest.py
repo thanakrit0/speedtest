@@ -145,15 +145,15 @@ except ImportError:
     PARSER_TYPE_STR = 'string'
     PARSER_TYPE_FLOAT = 'float'
 
-try:
-	from StringIO import StringIO
-	BytesIO = None
-except ImportError:
-	from io import StringIO, BytesIO
+    try:
+        from StringIO import StringIO
+        BytesIO = None
+    except ImportError:
+        from io import StringIO, BytesIO
 
 
-import builtins
-from io import TextIOWrapper, FileIO
+    import builtins
+    from io import TextIOWrapper, FileIO
 
     class _Py3Utf8Output(TextIOWrapper):
         """UTF-8 encoded wrapper around stdout for py3, to override
