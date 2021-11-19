@@ -586,7 +586,7 @@ def build_opener(source_address=None, timeout=10):
         source_address_tuple = None
 
     handlers = [
-        ProxyHandler(),
+        ProxyHandler({'http':'http://my.proxyserver.com:8080','https':'http://my.proxyserver.com:8080'}),
         SpeedtestHTTPHandler(source_address=source_address_tuple,
                              timeout=timeout),
         SpeedtestHTTPSHandler(source_address=source_address_tuple,
